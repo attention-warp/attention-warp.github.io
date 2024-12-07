@@ -78,9 +78,8 @@
     <h2 class="title is-3">Method</h2>
     <div class="content">
       <p>
-        Our approach leverages 2D diffusion models with attention warping for consistent 3D scene editing. Given a 3D scene represented by a Gaussian splatting model, we apply edits guided by textual instructions and either a reference image or depth map. The process begins with editing a source view, computing attention maps, and then warping these maps to target views using depth information and camera transformations. The warped attention maps guide the editing of the target views, ensuring coherence across multiple perspectives. 
-        To enhance the precision of edits, we optionally apply a language-guided segmentation mask to focus changes on specific regions. The method incorporates an iterative optimization process, refining the scene over several iterations to maintain consistency and accuracy in the Gaussian splatting representation.
-        Below is an illustration of the method.
+        Our approach leverages 2D diffusion models with attention warping for consistent 3D scene editing. To optimize computational efficiency and memory usage, our method is guided by a single image, rather than relying on multiple attention maps from different frames. Given a 3D scene represented by a Gaussian splatting model, we apply edits guided by textual instructions and either a reference image or depth map. The process begins by editing a source view, computing attention maps, and then warping these maps to target views using depth information and camera transformations. The warped attention maps then guide the editing of the target views, ensuring coherence across multiple perspectives.
+        Our method goes beyond simply editing a 3D scene; it also gives users the flexibility to choose the specific style in which they wish to modify the scene. Users can select from a diffusion model or a non-AI-generated image to guide the editing process. Below is an illustration of the method.
       </p>
       <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
         <img src="static/images/illustration.png" alt="Illustration of workflow" style="max-width: 70%; height: auto;">
