@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Placeholder description.">
+  <meta name="keywords" content="Placeholder, Keywords">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diffusion-Based Attention Warping for Consistent 3D Scene Editing</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+<section class="hero" style="background-color: #eeeeee;">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Diffusion-Based Attention Warping for Consistent 3D Scene Editing</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Eyal Gomel, Lior Wolf</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser" style="background-color: #ffffff;">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- White line before the video -->
+      <hr style="border: 1px solid #ffffff; margin: 0 0 20px 0;">
+      
+      <div style="width:100%; height:450px; background-color: #ffffff; display: flex; justify-content: center; align-items: center;">
+        <video width="100%" height="400" controls autoplay muted loop>
+          <source src="./static/videos/main.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Abstract Section -->
+<section class="section" style="background-color: #eeeeee; border-top: 1px solid #000000;">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Abstract</h2>
+    <div class="content abstract-content">
+      <p>
+        We present a novel method for 3D scene editing using diffusion models, designed to ensure view consistency and realism across perspectives. Our approach leverages attention features extracted from a single reference image to define the intended edits. These features are warped across multiple views by aligning them with scene geometry derived from Gaussian splatting depth estimates. Injecting these warped features into other viewpoints enables coherent propagation of edits, achieving high fidelity and spatial alignment in 3D space. Extensive evaluations demonstrate the effectiveness of our method in generating versatile edits of 3D scenes, significantly advancing the capabilities of scene manipulation compared to the existing methods.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Method Section -->
+<section class="section" style="background-color: #ffffff; border-top: 1px solid #000000;">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Method</h2>
+    <div class="content">
+      <p>
+        Our approach leverages 2D diffusion models with attention warping for consistent 3D scene editing. Given a 3D scene represented by a Gaussian splatting model, we apply edits guided by textual instructions and either a reference image or depth map. The process begins with editing a source view, computing attention maps, and then warping these maps to target views using depth information and camera transformations. The warped attention maps guide the editing of the target views, ensuring coherence across multiple perspectives. 
+        To enhance the precision of edits, we optionally apply a language-guided segmentation mask to focus changes on specific regions. The method incorporates an iterative optimization process, refining the scene over several iterations to maintain consistency and accuracy in the Gaussian splatting representation.
+        Below is an illustration of the method.
+      </p>
+      <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+        <img src="static/images/illustration.png" alt="Illustration of workflow" style="max-width: 70%; height: auto;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background-color: #ffffff; border-top: 1px solid #000000;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results</h2>
+        <div class="content">
+          <p>Dinosaur</p>
+          <div style="margin: 0 -10%; overflow: hidden;">
+            <video height="400" controls autoplay muted loop style="width: 100%;">
+              <source src="./static/videos/dinosaur.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <hr style="margin: 20px 0; border: 1px solid #ccc;"> <!-- Line added here -->
+          <p>Face</p>
+          <div style="margin: 0 -10%; overflow: hidden;">
+            <video height="400" controls autoplay muted loop style="width: 100%;">
+              <source src="./static/videos/face.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <hr style="margin: 20px 0; border: 1px solid #ccc;"> <!-- Line added here -->
+          <p>Bear</p>
+          <div style="margin: 0 -10%; overflow: hidden;">
+            <video height="400" controls autoplay muted loop style="width: 100%;">
+              <source src="./static/videos/bear.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+</body>
+</html>
