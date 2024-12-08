@@ -36,13 +36,50 @@
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">Diffusion-Based Attention Warping for Consistent 3D Scene Editing</h1>
           <div class="is-size-5 publication-authors">
-            <span class="author-block">Eyal Gomel, Lior Wolf</span>
+            <span class="author-block">
+              <a href="eyalgomel12@gmail.com" target="_blank"
+                >Eyal Gomel</a>,
+            <span class="author-block">
+              <a href="https://www.cs.tau.ac.il/~wolf" target="_blank"
+                >Lior Wolf</a>
+              </span>
           </div>
-        </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Tel-Aviv University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Arxiv PDF link -->
+              <span class="link-block">
+                <a
+                  href=""
+                  target="_blank"
+                  class="external-link button is-normal is-rounded is-dark"
+                >
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper (Soon) </span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a
+                  href="https://github.com"
+                  target="_blank"
+                  class="external-link button is-normal is-rounded is-dark"
+                >
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (Soon)</span>
+                </a>
+              </span>
       </div>
     </div>
   </div>
 </section>
+
 
 <section class="hero teaser" style="background-color: #ffffff;">
   <div class="container is-max-desktop">
@@ -78,11 +115,10 @@
     <h2 class="title is-3">Method</h2>
     <div class="content">
       <p>
-        Our approach leverages 2D diffusion models with attention warping for consistent 3D scene editing. To optimize computational efficiency and memory usage, our method is guided by a single image, rather than relying on multiple attention maps from different frames. Given a 3D scene represented by a Gaussian splatting model, we apply edits guided by textual instructions and either a reference image or depth map. The process begins by editing a source view, computing attention maps, and then warping these maps to target views using depth information and camera transformations. The warped attention maps then guide the editing of the target views, ensuring coherence across multiple perspectives.
-        Our method goes beyond simply editing a 3D scene; it also gives users the flexibility to choose the specific style in which they wish to modify the scene. Users can select from a diffusion model or a non-AI-generated image to guide the editing process. Below is an illustration of the method.
-      </p>
+        Our method uses 2D diffusion models with attention warping to ensure consistent 3D scene editing. By guiding the process with a single image, we optimize both computational efficiency and memory usage. Starting with a 3D scene represented by a Gaussian splatting model, we apply edits based on textual instructions and a reference image or depth map. We compute attention maps from the source view, then warp them to target views using depth and camera information, ensuring coherence across perspectives.
+        Our approach goes beyond basic 3D scene editing—it allows users to select the style of the edits. Whether using a diffusion model or a non-AI-generated image, users have the flexibility to guide the scene modification in their preferred way. Below is an illustration of the method.      </p>
       <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
-        <img src="static/images/illustration.png" alt="Illustration of workflow" style="max-width: 70%; height: auto;">
+        <img src="static/images/illustration.png" alt="Illustration of workflow" style="max-width: 60%; height: auto;">
       </div>
     </div>
   </div>
@@ -117,12 +153,52 @@
               Your browser does not support the video tag.
             </video>
           </div>
+          <hr style="margin: 20px 0; border: 1px solid #ccc;"> <!-- Line added here -->
+          <p>Stump</p>
+          <div style="margin: 0 -10%; overflow: hidden;">
+            <video height="400" controls autoplay muted loop style="width: 100%;">
+              <source src="./static/videos/stump.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<section class="section is-white" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+      TODO: add BibTeX here
+    </code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+  </div>
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content" style="font-size: 0.8rem; color: #666;">
+            <p>
+              This website uses elements from the <a href="https://nerfies.github.io/" target="_blank">Nerfies</a> codebase. Special thanks to the <i>Nerfies</i> team for their open-source contributions! This website is licensed under a
+              <a
+                rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/"
+                target="_blank"
+                >Creative Commons Attribution-ShareAlike 4.0 International
+                License</a
+              >.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+</footer>
 
 </body>
 </html>
