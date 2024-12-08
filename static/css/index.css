@@ -18,6 +18,19 @@ body {
 }
 
 
+.hero {
+  padding-bottom: 30px;
+}
+
+.teaser {
+  margin-bottom: 30px;
+}
+
+.abstract-section {
+  padding-top: 30px;
+}
+
+
 .teaser .hero-body {
   padding-top: 0;
   padding-bottom: 3rem;
